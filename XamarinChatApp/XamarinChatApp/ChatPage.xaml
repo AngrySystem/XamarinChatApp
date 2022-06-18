@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinChatApp.ChatPage">
+
+    <StackLayout BackgroundColor="gray">
+
+        <StackLayout>
+            <ListView x:Name="messageList" SelectionMode="None" VerticalScrollBarVisibility="Never" HasUnevenRows="True" ItemsSource="{Binding Messages}" Margin="5,5,5,0">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Frame CornerRadius="10" BackgroundColor="white" Margin="5" Padding="0">
+                                    <StackLayout Orientation="Vertical" Margin="6">
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding MessageData.UserLogin}" TextColor="{Binding Color}" FontAttributes="Bold" FontSize="17" />
+                                            <Label Text="{Binding MessageData.Time}" FontAttributes="Italic" TextColor="Gray" FontSize="10" HorizontalOptions="EndAndExpand" VerticalOptions="Center"/>
+                                        </StackLayout>
+
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding MessageData.Text}" FontSize="16" TextColor="Black"/>
+                                        </StackLayout>
+
+                                    </StackLayout>
+                                </Frame>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+
+        <StackLayout>
+            <Frame BackgroundColor="gray" Padding="0">
+                <StackLayout Orientation="Horizontal" Padding="7">
+                    <Editor x:Name="messagePlace" Placeholder="Write a message..." AutoSize="TextChanges" HorizontalOptions="FillAndExpand" WidthRequest="1" HeightRequest="60" BackgroundColor="White"/>
+                    <Button Text="Send" Clicked="sendButtonClicked" CornerRadius="30" WidthRequest="60" HeightRequest="60" Background="#faf9f7"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+
+    </StackLayout>
+
+</ContentPage>

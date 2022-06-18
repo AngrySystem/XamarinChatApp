@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinChatApp.LoginPage">
+
+    <StackLayout>
+        <StackLayout Margin="25" HorizontalOptions="Center">
+            <Frame CornerRadius="15" BackgroundColor="#faf9f5">
+                <StackLayout>
+
+                    <StackLayout>
+                        <Label HorizontalOptions="Center" Padding="8" FontSize="25" FontAttributes="Bold">Login</Label>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,22,0,0">
+                        <Label>Username</Label>
+                        <Entry Placeholder="Type your username" FontSize="17" Text="{Binding Path=Login}" />
+                    </StackLayout>
+
+                    <StackLayout Margin="0,8,0,6">
+                        <Label>Password</Label>
+                        <Entry Placeholder="Type your password" FontSize="17" Text="{Binding Path=Password}" />
+                    </StackLayout>
+
+                    <StackLayout Orientation="Horizontal">
+                        <Label WidthRequest="195">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <Span Text="Don`t have an account? "></Span>
+                                    <Span Text="Register" TextDecorations="Underline">
+                                        <Span.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="GoRegister"></TapGestureRecognizer>
+                                        </Span.GestureRecognizers>
+                                    </Span>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Button Text="Login" Clicked="LoginButton" CornerRadius="8" WidthRequest="65"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+    
+</ContentPage>

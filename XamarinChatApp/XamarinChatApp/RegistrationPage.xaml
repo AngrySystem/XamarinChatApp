@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="XamarinChatApp.RegistrationPage">
+
+    <StackLayout>
+        <StackLayout Margin="25" HorizontalOptions="Center">
+            <Frame CornerRadius="15" BackgroundColor="#faf9f5">
+                <StackLayout WidthRequest="280">
+
+                    <StackLayout>
+                        <Label HorizontalOptions="Center" Padding="8" FontSize="25" FontAttributes="Bold">Registration</Label>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,22,0,0">
+                        <Label>Username</Label>
+                        <Entry Placeholder="Create a username" FontSize="17" Text="{Binding Path=Login}"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,8,0,0">
+                        <Label>Password</Label>
+                        <Entry Placeholder="Create a password" FontSize="17" Text="{Binding Path=Password}"/>
+                    </StackLayout>
+
+                    <StackLayout Margin="0,8,0,12">
+                        <Label>Repeat Password</Label>
+                        <Entry Placeholder="Repeat password" FontSize="17" Text="{Binding Path=RePassword}"/>
+                    </StackLayout>
+
+                    <StackLayout Padding="25,0,25,4">
+                        <Button Text="Register" CornerRadius="14" Clicked="RegisterClicked" HeightRequest="38"/>
+                    </StackLayout>
+
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
